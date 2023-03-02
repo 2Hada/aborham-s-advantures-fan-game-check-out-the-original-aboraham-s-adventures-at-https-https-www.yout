@@ -76,13 +76,13 @@ public class gamePanel extends JPanel implements Runnable {
         } else if (kh.left == true) {
             pX -= pSpeed;
         } else if (kh.right == true) {
-            pY -= pSpeed;
+            pY += pSpeed;
         }
     }
 
-    public void paint(Graphics g) {
+    public void paintComponent(Graphics g) {
         super.paintComponent(g);
-        Graphics2D g2d = (Graphics2D)g; //case g as g2d idk either lmao
+        Graphics2D g2d = (Graphics2D)g; //cast g as g2d idk either lmao
         g2d.setColor(Color.BLUE);
         g2d.fillRect(pX, pY, tileSize, tileSize); //man this is gonna be a pain in the ass
         g2d.dispose(); //what

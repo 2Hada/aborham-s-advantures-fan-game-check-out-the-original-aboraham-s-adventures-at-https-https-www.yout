@@ -7,17 +7,25 @@ public class keyHandler implements KeyListener {
 
     @Override
     public void keyTyped(KeyEvent e) {
+    }
+
+    @Override
+    public void keyPressed(KeyEvent e) {
         int code = e.getKeyCode();
 
         if (code == KeyEvent.VK_W) {
             up = true;
             direction = 1;
+        } else if (code == KeyEvent.VK_S) {
+            down = true;
+            direction = 2;
+        } else if (code == KeyEvent.VK_A) {
+            left = true;
+            direction = 3;
+        } else if (code == KeyEvent.VK_D) {
+            right = true;
+            direction = 4;
         }
-    }
-
-    @Override
-    public void keyPressed(KeyEvent e) {
-
     }
 
     @Override
@@ -26,6 +34,15 @@ public class keyHandler implements KeyListener {
 
         if (code == KeyEvent.VK_W) {
             up = false;
+            direction = 0;
+        } else if (code == KeyEvent.VK_S) {
+            down = false;
+            direction = 0;
+        } else if (code == KeyEvent.VK_A) {
+            left = false;
+            direction = 0;
+        } else if (code == KeyEvent.VK_D) {
+            right = false;
             direction = 0;
         }
     }
